@@ -1,0 +1,20 @@
+# Custom CISA installer for OT
+
+# Metapackages
+# You can customize the set of Kali metapackages (groups of tools) available
+# in the installer ISO.
+# For the complete list see: https://tools.kali.org/kali-metapackages
+kali-linux-core
+kali-tools-detect
+kali-tools-identify
+kali-tools-protect
+kali-tools-recover
+kali-tools-respond
+zeek
+wireshark
+nmap
+
+
+# Graphical desktops
+kali-desktop-xfce
+
