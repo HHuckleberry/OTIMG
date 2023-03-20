@@ -6,8 +6,9 @@ set -e
 set -o pipefail # Bashism
 
 # Kali's default values
+#KALI_DIST="kali-rolling"
 KALI_DIST="kali-rolling"
-KALI_VERSION=""
+KALI_VERSION="CISA_OT"
 KALI_VARIANT="default"
 IMAGE_TYPE="live"
 TARGET_DIR="$(dirname $0)/images"

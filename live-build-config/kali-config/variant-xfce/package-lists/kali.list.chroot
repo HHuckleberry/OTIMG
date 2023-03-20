@@ -17,4 +17,5 @@ nmap
 
 # Graphical desktops
 kali-desktop-xfce
-
+#kali-desktop-gnome
+#kali-desktop-kde
