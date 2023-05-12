@@ -1,0 +1,59 @@
+# specify dconf paths
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'DiskTools', 'office', 'softareinstallers', 'preferences', 'firewalltools', 'systemhealth', 'tweaks', 'life', 'nettools']
+#these list above poitns to the locations below. also 00-shell app-picker-layout will also have have these (if layout or name changes)
+
+[org/gnome/desktop/app-folders/folders/preferences]
+apps=['system-config-printer.desktop', 'time.desktop', 'org.gnome.Extensions.desktop', 'users.desktop', 'pavucontrol.desktop', 'blueman-manager.desktop', 'org.gnome.clocks.desktop']
+name='Preferences'
+
+[org/gnome/desktop/app-folders/folders/firewalltools]
+apps=['gufw.desktop', 'fwbuilder.desktop']
+name='Firewall Tools'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/disktools]
+apps=['bleachbit-root.desktop', 'org.bleachbit.BleachBit.desktop', 'gparted.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop']
+name='Disk Tools'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/tweaks]
+apps=['org.gnome.tweaks.desktop', 'menulibre.desktop']
+name='Tweaks'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/life]
+apps=['org.gnome.Calendar.desktop', 'org.gnome.Weather.desktop', 'org.gnome.Contacts.desktop']
+name='Life'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-system-log.desktop', 'gucharmap.desktop', 'nm-connection-editor.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.eog.desktop', 'yelp.desktop', 'simple-scan.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Characters.desktop', 'org.gnome.font-viewer.desktop']
+categories=['X-GNOME-Utilities']
+excluded-apps=['org.gnome.tweaks.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor.desktop', 'gparted.desktop', 'org.gnome.baobab.desktop', 'pavucontrol.desktop', 'org.gnome.DiskUtility.desktop']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/systemhealth]
+apps=['htop.desktop', 'gnome-system-monitor.desktop', 'laptop-mode-tools.desktop']
+name='System Health'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/nettools]
+apps=['wireshark.desktop', 'gnome-nettool.desktop']
+name='Network Tools'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/office]
+apps=['libreoffice-writer.desktop', 'gimp.desktop', 'mousepad.desktop', 'libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-base.desktop', 'org.gnome.Evince.desktop', 'pdfchain.desktop', 'xournal.desktop', 'libreoffice-startcenter.desktop']
+name='Office'
+
+[org/gnome/desktop/app-folders/folders/softareinstallers]
+apps=['org.gnome.Software.desktop', 'software-properties-gnome.desktop', 'org.gnome.Packages.desktop', 'org.gnome.PackageUpdater.desktop']
+name='Software'
+translate=false

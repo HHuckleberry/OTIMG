@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#/etc/issue.net
+echo "CISA Security Essential Linux" > /etc/issue.net
+#/etc/issue
+echo "CISA Security Essential" > /etc/issue
+#/etc/dpkg/origins/default (symlink to distribution information file)
+echo "Vendor: CISA \nVendor-URL: https://www.cisa.gov/ \nBugs: https://github.com/cisagov" > /etc/dpkg/origins/default
+
+#etc/os-release
+
+#/usr/lib/os-release
+echo -e 'PRETTY_NAME="CISA Security Essential Linux"
+NAME="CISA SEL Debian GNU/Linux"
+VERSION_ID="11" 
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.cisa.gov/"
+SUPPORT_URL="https://github.com/cisagov"
+BUG_REPORT_URL="https://github.com/cisagov"' > /usr/lib/os-release
+
+#/usr/share/base-files/motd
+ echo -e 'This distribution has been modified and released by DHS CISA' >> /usr/share/base-files/motd
+
+#/etc/grub.d/05_debian_theme
+#need to find pointers to this location; if not, edit and through in custom cisa info
+ 
+#package root/build/boot/x86/ 
+
+#package  root/build/config/local
+
+#debian-cd install images
+
+#synaptic uses debian logo indicating packages - keep
+
+#software-properties-gtk
+

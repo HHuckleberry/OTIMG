@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "I: running $0"
+echo "Removing unwanted packages" 
+aptitude -y purge exim4-base nfs-common rpcbind  evolution lightsoff hitori swell-foop gnome-games gnome-taquin gnome-music tali gnome-sudoku iagno gnome-sushi quadrapassel gnome-tetravex gnome-mines gnome-mahjongg gnome-sound-recorder gnome-sound-recorder gnome-video-effects gnome-online-miners gnome-online-accounts gnome-music gnome-2048 gnome-chess gnome-nibbles gnome-robots gnome-klotski aisleriot gnome-taquin four-in-a-row five-or-more 
+aptitude -y purge cheese audacity exfalso gdebi evolution dconf-editor kiwix thunderbird thunar gcolor3 ristretto pidgin synaptic mumble rhythmbox-plugins
+aptitude -y purge qwinff catfish pidgin-extprefs quodlibet thunar-archive-plugin thunar-media-tags-plugin thunar-volman thunderbird-l10n-fr xfce4-places-plugin totem

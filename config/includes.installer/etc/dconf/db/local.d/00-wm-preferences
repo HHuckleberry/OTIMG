@@ -1,0 +1,3 @@
+# Specify dconf path. currently causes issue as this is not built by dconf initially. 
+#[/org/gnome/desktop/wm/preferences]
+#button-layout=':minimize,maximize,close'

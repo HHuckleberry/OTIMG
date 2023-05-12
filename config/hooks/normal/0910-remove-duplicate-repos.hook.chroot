@@ -1,0 +1,5 @@
+#!/bin/bash
+#remove debian-live-config/list
+rm /etc/apt/sources.list.d/debian-live-config.list
+#remove security-backports.list
+rm /etc/apt/sources.list.d/debian-updates-security-backports.list

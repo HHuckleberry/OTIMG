@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=zap
+StartupWMClass=ZAP
+Encoding=UTF-8
+Exec=owasp-zap
+StartupNotify=false
+Terminal=false
+Type=Application
+Icon=/usr/share/owasp-zap/zap.ico
+Categories=Network;Utilities

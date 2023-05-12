@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "I: running $0"
+aptitude -y install nmap gnome/stable gnome-session gnome-shell-extension-dashtodock gnome-shell-extension-appindicator make git zsh wireshark clamav
+aptitude -y install netsniff-ng

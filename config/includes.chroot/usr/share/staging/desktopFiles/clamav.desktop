@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=clamav
+Encoding=UTF-8
+Exec=gnome-terminal --title "clamav" -- sh -c 'clamscan -h; $SHELL'
+Icon=/usr/share/icons/dist/clamav.png
+Terminal=false
+Type=Application
+Categories=Security

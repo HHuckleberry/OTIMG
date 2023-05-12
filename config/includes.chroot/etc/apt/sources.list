@@ -1,0 +1,13 @@
+deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+deb https://deb.debian.org/debian/ bullseye stable main contrib non-free
+deb https://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-free
+deb https://deb.debian.org/debian/ bullseye-updates main contrib non-free
+deb https://deb.debian.org/debian/ bullseye-backports main contrib non-free
+
+
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.

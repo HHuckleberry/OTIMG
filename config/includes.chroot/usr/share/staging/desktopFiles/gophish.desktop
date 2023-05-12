@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=gophish
+StartupWMClass=goPhish
+Encoding=UTF-8
+Exec=gnome-terminal --title "gophish" -- sh -c 'cd /opt/gophish && sudo /opt/gophish/gophish; $SHELL'
+StartupNotify=true
+Terminal=true
+Type=Application
+Icon=/usr/share/icons/dist/gophish_purple.png
+Categories=Network;Utilities

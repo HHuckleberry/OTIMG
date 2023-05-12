@@ -1,0 +1,65 @@
+#!/usr/bin/make
+# please update doc/md/packages/extras.md after adding changes to this file
+WGET=wget --continue --no-verbose --show-progress --directory-prefix=cache/downloads/
+
+all: download_extra
+
+clean:
+	rm -rvf config/packages.chroot/
+	rm -rvf cache/downloads
+	rm -rf config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+
+clean_all: clean
+	rm -rvf cache/downloads/
+
+
+download_extra: clean
+	# Download additional software from third-party repository (https://nodiscc.gitlab.io/toolbox)
+	# TODO use the APT repository at build time, but disable it in the final chroot/image
+	# TODO file ITPs on bugs.debian.org
+	mkdir -p cache/downloads/ config/packages.chroot/
+
+
+	
+	# EXTRA https://github.com/az0/cleanerml
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/b/bleachbit-cleanerml/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb
+	cp cache/downloads/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb config/packages.chroot/
+
+
+	# EXTRA https://github.com/nodiscc/user.js
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/u/user.js/user.js_0.5.0-1_all.deb
+	cp cache/downloads/user.js_0.5.0-1_all.deb config/packages.chroot/
+
+	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
+	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/
+	mkdir -p config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+	$(WGET) https://addons.mozilla.org/firefox/downloads/file/3465157/keepassxc_browser-latest-fx.xpi -O config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/keepassxc-browser@keepassxc.org.xpi
+	$(WGET) https://addons.mozilla.org/firefox/downloads/file/3711829/cookie_autodelete-3.6.0-an+fx.xpi -O config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/CookieAutoDelete@kennydo.com.xpi
+
+
+	#EXTRA OWASP ZAP - added repo to task 0920
+	#$(WGET) https://download.opensuse.org/repositories/home:/cabelo/Debian_11/amd64/owasp-zap_2.12.0-1_amd64.deb -O ./cache/downloads/owasp-zap_2.12.0-1_amd64.deb
+	#cp ./cache/downloads/owasp-zap_2.12.0-1_amd64.deb config/packages.chroot/
+
+
+	#NTOPNG 
+	$(WGET) https://packages.ntop.org/apt-stable/bullseye/all/apt-ntop-stable.deb -O config/packages.chroot/apt-ntop-stable.deb
+	dpkg-name "config/packages.chroot/apt-ntop-stable.deb"
+
+	#code
+	cp config/includes.installer/usr/share/staging/code_1.77.3-1681292746_amd64.deb config/packages.chroot/
+
+	#gophish
+	#$(WGET) https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip -O ./cache/downloads/gophish.zip
+	#unzip -o ./cache/downloads/gophish.zip -d ./cache/downloads/gophish
+	#cp ./cache/downloads/gophish ./config/inculdes.chroot/opt/ -r -f
+	#cp ./cache/downloads/gophish ./config/includes.installer/opt/ -r -f
+
+	# DISABLED https://signal.org/
+	# RFP https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=842943
+    # requires trusting a third-party repository, adds ~400MB to installation size
+	# echo 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/signal-desktop.key.chroot.asc] https://updates.signal.org/desktop/apt xenial main' > config/archives/signal-desktop.list.chroot
+	# cp config/archives/signal-desktop.list.chroot config/archives/signal-desktop.list.binary
+	# wget -O config/archives/signal-desktop.key.chroot https://updates.signal.org/desktop/apt/keys.asc
+	# cp config/archives/signal-desktop.key.chroot config/archives/signal-desktop.key.binary
+	# echo "signal-desktop" > config/package-lists/signal-desktop.list.chroot

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "I: running $0"
+echo "Customizing .dmrc"
+#update-alternatives --set x-session-manager /usr/bin/gnome-session
+#replace .dmrc as build script overides settings
+rm /etc/skel/.dmrc
+echo -e "[Desktop]\nSession=GNOME\nLanguage=en_US.utf8" > /etc/skel/.dmrc
