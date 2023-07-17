@@ -3,20 +3,3 @@
 
 #Disable world-readable home dirs
 adduser adduser/homedir-permission boolean false
-
-# Including keyboards
-d-i console-setup/ask_detect boolean false
-d-i keyboard-configuration/layout select USA
-d-i keyboard-configuration/variant select USA
-d-i keyboard-configuration/modelcode string pc105
-d-i localechooser/supported-locales en_US.UTF-8
-
-### Localization
-d-i debian-installer/language string en
-d-i debian-installer/locale string en_US
-d-i localechooser/preferred-locale string en_US.UTF-8
-d-i keymap select us
-
-# Disable popularity-contest
-popularity-contest popularity-contest/participate boolean false
-

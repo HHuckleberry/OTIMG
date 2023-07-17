@@ -18,8 +18,11 @@ nikto
 node-typescript
 zeitgeist
 lynis
+nfdump
 
 
+#argus-server
+#argus-client
 
 
 #system

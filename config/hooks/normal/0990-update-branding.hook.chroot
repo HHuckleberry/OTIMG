@@ -7,7 +7,8 @@ echo "CISA Security Essential" > /etc/issue
 #/etc/dpkg/origins/default (symlink to distribution information file)
 echo "Vendor: CISA \nVendor-URL: https://www.cisa.gov/ \nBugs: https://github.com/cisagov" > /etc/dpkg/origins/default
 
-#etc/os-release
+#/etc/os-release
+
 
 #/usr/lib/os-release
 echo -e 'PRETTY_NAME="CISA Security Essential Linux"
@@ -24,8 +25,9 @@ BUG_REPORT_URL="https://github.com/cisagov"' > /usr/lib/os-release
  echo -e 'This distribution has been modified and released by DHS CISA' >> /usr/share/base-files/motd
 
 #/etc/grub.d/05_debian_theme
-#need to find pointers to this location; if not, edit and through in custom cisa info
- 
+#need to find pointers to this location; if not, edit and thow in custom cisa info
+ cp /usr/share/backgrounds/desktop-grub.png /usr/share/images/desktop-base/desktop-grub.png
+
 #package root/build/boot/x86/ 
 
 #package  root/build/config/local

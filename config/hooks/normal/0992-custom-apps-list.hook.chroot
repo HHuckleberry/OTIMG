@@ -1,3 +1,5 @@
 #!/bin/bash
 mv /usr/share/staging/desktopFiles/* /usr/share/applications/
 #custom feel - not working as dconf deamon isn't running. start first?
+#set greenbone.sh as x
+chmod +x /opt/greenbone/greenbone.sh

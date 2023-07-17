@@ -27,8 +27,9 @@ download_extra: clean
 
 
 	# EXTRA https://github.com/nodiscc/user.js
-	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/u/user.js/user.js_0.5.0-1_all.deb
-	cp cache/downloads/user.js_0.5.0-1_all.deb config/packages.chroot/
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/u/user.js/user.js_0.8.0-1_all.deb
+	cp cache/downloads/user.js_0.8.0-1_all.deb config/packages.chroot/
+
 
 	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
 	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/
@@ -42,7 +43,8 @@ download_extra: clean
 	#cp ./cache/downloads/owasp-zap_2.12.0-1_amd64.deb config/packages.chroot/
 
 
-	#NTOPNG 
+	#NTOPNG
+	#note - gets downgraded and causes build to fail 
 	$(WGET) https://packages.ntop.org/apt-stable/bullseye/all/apt-ntop-stable.deb -O config/packages.chroot/apt-ntop-stable.deb
 	dpkg-name "config/packages.chroot/apt-ntop-stable.deb"
 

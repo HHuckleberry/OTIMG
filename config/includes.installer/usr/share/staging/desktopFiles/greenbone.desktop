@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Greenbone Community Edition
+StartupWMClass=gce-installer
+Encoding=UTF-8
+Exec=gnome-terminal --title "gce-installer" -- sh -c 'cd /opt/greenbone && sudo /opt/greenbone/greenbone.sh; $SHELL'
+StartupNotify=true
+Terminal=true
+Type=Application
+Icon=/usr/share/icons/dist/greenbone.png
+Categories=Security, Utilities
